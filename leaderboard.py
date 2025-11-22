@@ -19,3 +19,8 @@ def add_run(leaderboard:dict[str,timedelta],player_name:str,time:timedelta)->int
     if leaderboard[player_name]==None or leaderboard[player_name]> time:
         leaderboard.update({player_name:time})
     return 0
+def clear_score(leaderboard,player_name):
+    if player_name not in leaderboard:
+        return False
+    leaderboard.update({player_name:None})
+    return True
